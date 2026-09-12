@@ -76,17 +76,19 @@ Make sure your system has the following installed:
 
 ### Step 1: Run the Backend (Spring Boot)
 
-#### Option A: Running from Terminal (with Maven)
+#### Option A: Running from Terminal (Using Maven Wrapper — No Maven installation required!)
 Open a terminal in the root directory:
 ```bash
 cd backend
 
-# Run with demo seed data pre-populated (Recommended for Hackathon demos)
-mvn spring-boot:run -Dspring-boot.run.profiles=demo
+# On Windows (PowerShell or Command Prompt):
+.\mvnw.cmd spring-boot:run
 
-# Or run in standard mode without pre-seeded data
-mvn spring-boot:run
+# On Mac / Linux:
+./mvnw spring-boot:run
 ```
+*(Demo seed data with sample emitters, buyers, listings, and requests is already enabled by default!)*
+
 
 #### Option B: Running from your IDE (Antigravity IDE / VS Code / IntelliJ)
 1. Open the project in your IDE.
