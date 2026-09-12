@@ -60,9 +60,21 @@ export function getMatchesForRequest(id) {
   return unwrap(client.get(`/requests/${id}/matches`))
 }
 
+export function cancelRequest(id) {
+  return unwrap(client.post(`/requests/${id}/cancel`))
+}
+
+export function deleteRequest(id) {
+  return unwrap(client.delete(`/requests/${id}`))
+}
+
 // --- Matches ---
 export function requestMatch(id) {
   return unwrap(client.post(`/matches/${id}/request`))
+}
+
+export function cancelMatch(id) {
+  return unwrap(client.post(`/matches/${id}/cancel`))
 }
 
 export function acceptMatch(id) {
@@ -72,6 +84,7 @@ export function acceptMatch(id) {
 export function rejectMatch(id) {
   return unwrap(client.post(`/matches/${id}/reject`))
 }
+
 
 // --- Enrichment helpers: match responses only carry ids, so dashboards batch-fetch
 // the listing/user/request rows they need for display, deduped, in parallel. ---
